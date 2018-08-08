@@ -13,3 +13,6 @@ vendor/
 /portal/log/*
 !/portal/log/.keep
 /portal/tmp
+
+db
+db.tgz

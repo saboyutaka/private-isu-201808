@@ -5,9 +5,13 @@ require 'shellwords'
 
 module Isuconp
   class App < Sinatra::Base
-    use Rack::Session::Memcache, autofix_keys: true, secret: ENV['ISUCONP_SESSION_SECRET'] || 'sendagaya'
+    use Rack::Session::Memcache, autofix_keys: true, secret: ENV['ISUCONP_SESSION_SECRET'] || 'sendagaya', memcache_server: "#{ENV['ISUCONP_MEMCACHED_HOST'] || 'localhost'}:11211"
     use Rack::Flash
     set :public_folder, File.expand_path('../../public', __FILE__)
+
+    configure :development do
+      # something
+    end
 
     UPLOAD_LIMIT = 10 * 1024 * 1024 # 10mb
 

@@ -25,7 +25,7 @@ services:
       - 3306:3306
     volumes:
     - mysql-volume:/var/lib/mysql
-    - ./../db:/var/tmp
+    - ./db:/var/tmp
   memcached:
     image: memcached:1.4
     ports:

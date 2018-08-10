@@ -14,5 +14,5 @@ vendor/
 !/portal/log/.keep
 /portal/tmp
 
-db
-db.tgz
+db.dump
+db.dump.tgz
